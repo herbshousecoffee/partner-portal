@@ -1,0 +1,247 @@
+{
+  "screenshots": [
+    {
+      "viewport": "mobile",
+      "page": "login",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/mobile-login.png"
+    },
+    {
+      "viewport": "mobile",
+      "page": "login-error",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/mobile-login-error.png"
+    },
+    {
+      "viewport": "mobile",
+      "page": "marketing",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/mobile-marketing.png"
+    },
+    {
+      "viewport": "mobile",
+      "page": "sales",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/mobile-sales.png"
+    },
+    {
+      "viewport": "mobile",
+      "page": "projects",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/mobile-projects.png"
+    },
+    {
+      "viewport": "tablet",
+      "page": "login",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/tablet-login.png"
+    },
+    {
+      "viewport": "tablet",
+      "page": "login-error",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/tablet-login-error.png"
+    },
+    {
+      "viewport": "tablet",
+      "page": "marketing",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/tablet-marketing.png"
+    },
+    {
+      "viewport": "tablet",
+      "page": "sales",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/tablet-sales.png"
+    },
+    {
+      "viewport": "tablet",
+      "page": "projects",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/tablet-projects.png"
+    },
+    {
+      "viewport": "desktop",
+      "page": "login",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-login.png"
+    },
+    {
+      "viewport": "desktop",
+      "page": "login-error",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-login-error.png"
+    },
+    {
+      "viewport": "desktop",
+      "page": "marketing",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-marketing.png"
+    },
+    {
+      "viewport": "desktop",
+      "page": "sales",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-sales.png"
+    },
+    {
+      "viewport": "desktop",
+      "page": "projects",
+      "path": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-projects.png"
+    }
+  ],
+  "accessibility": [
+    {
+      "page": "marketing",
+      "viewport": "mobile",
+      "touchTargets": {
+        "total": 4,
+        "allMeet44px": false,
+        "sizes": [
+          {
+            "width": 69,
+            "height": 36,
+            "meetsMinimum": false
+          },
+          {
+            "width": 98,
+            "height": 46,
+            "meetsMinimum": true
+          },
+          {
+            "width": 68,
+            "height": 46,
+            "meetsMinimum": true
+          },
+          {
+            "width": 86,
+            "height": 46,
+            "meetsMinimum": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "sales",
+      "viewport": "mobile",
+      "touchTargets": {
+        "total": 4,
+        "allMeet44px": false,
+        "sizes": [
+          {
+            "width": 69,
+            "height": 36,
+            "meetsMinimum": false
+          },
+          {
+            "width": 98,
+            "height": 46,
+            "meetsMinimum": true
+          },
+          {
+            "width": 68,
+            "height": 46,
+            "meetsMinimum": true
+          },
+          {
+            "width": 86,
+            "height": 46,
+            "meetsMinimum": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "projects",
+      "viewport": "mobile",
+      "touchTargets": {
+        "total": 4,
+        "allMeet44px": false,
+        "sizes": [
+          {
+            "width": 69,
+            "height": 36,
+            "meetsMinimum": false
+          },
+          {
+            "width": 98,
+            "height": 46,
+            "meetsMinimum": true
+          },
+          {
+            "width": 68,
+            "height": 46,
+            "meetsMinimum": true
+          },
+          {
+            "width": 86,
+            "height": 46,
+            "meetsMinimum": true
+          }
+        ]
+      }
+    }
+  ],
+  "performance": [
+    {
+      "page": "login",
+      "loadTime": "536ms",
+      "jsHeapSize": "12.59MB",
+      "layoutCount": 111,
+      "recalcStyleCount": 307
+    },
+    {
+      "page": "login-error",
+      "loadTime": "536ms",
+      "jsHeapSize": "12.19MB",
+      "layoutCount": 132,
+      "recalcStyleCount": 362
+    },
+    {
+      "page": "marketing",
+      "loadTime": "2ms",
+      "jsHeapSize": "13.31MB",
+      "layoutCount": 139,
+      "recalcStyleCount": 368
+    },
+    {
+      "page": "sales",
+      "loadTime": "2ms",
+      "jsHeapSize": "13.33MB",
+      "layoutCount": 147,
+      "recalcStyleCount": 432
+    },
+    {
+      "page": "projects",
+      "loadTime": "2ms",
+      "jsHeapSize": "14.66MB",
+      "layoutCount": 155,
+      "recalcStyleCount": 472
+    }
+  ],
+  "interactions": [
+    {
+      "type": "keyboard-navigation",
+      "page": "marketing",
+      "action": "Tab key press",
+      "screenshot": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-marketing-focus.png"
+    },
+    {
+      "type": "hover-state",
+      "page": "marketing",
+      "element": "resource-card",
+      "screenshot": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-marketing-hover.png"
+    },
+    {
+      "type": "keyboard-navigation",
+      "page": "sales",
+      "action": "Tab key press",
+      "screenshot": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-sales-focus.png"
+    },
+    {
+      "type": "hover-state",
+      "page": "sales",
+      "element": "resource-card",
+      "screenshot": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-sales-hover.png"
+    },
+    {
+      "type": "keyboard-navigation",
+      "page": "projects",
+      "action": "Tab key press",
+      "screenshot": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-projects-focus.png"
+    },
+    {
+      "type": "hover-state",
+      "page": "projects",
+      "element": "resource-card",
+      "screenshot": "/Users/addisonday/Claude/apps/partner-portal/screenshots/desktop-projects-hover.png"
+    }
+  ],
+  "errors": []
+}
