@@ -26,7 +26,7 @@ function LoginScreen({ onLogin }) {
         {/* Herb's House Logo */}
         <div className="text-center mb-8">
           <img
-            src="/assets/hh-logo500.png"
+            src={`${import.meta.env.BASE_URL}assets/hh-logo500.png`}
             alt="Herb's House Coffee"
             className="h-24 mx-auto mb-4"
           />

@@ -5,7 +5,7 @@ function Header({ onLogout }) {
         {/* Logo/Brand - Mobile First */}
         <div className="flex items-center gap-3">
           <img
-            src="/assets/hh-logo500.png"
+            src={`${import.meta.env.BASE_URL}assets/hh-logo500.png`}
             alt="Herb's House Coffee"
             className="h-8 sm:h-10"
           />
