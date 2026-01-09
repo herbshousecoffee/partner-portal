@@ -21,20 +21,21 @@ function LoginScreen({ onLogin }) {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <main className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Herb's House Logo */}
-        <div className="text-center mb-8">
+        <header className="text-center mb-8">
           <img
             src={`${import.meta.env.BASE_URL}assets/hh-logo500.png`}
             alt="Herb's House Coffee"
             className="h-24 mx-auto mb-4"
           />
-          <p className="text-text-secondary text-sm">Partner Portal</p>
-        </div>
+          <h1 className="text-text-secondary text-sm">Partner Portal</h1>
+        </header>
 
         {/* Login Card */}
-        <div className="bg-surface rounded-lg shadow-medium p-8">
+        <section className="bg-surface rounded-lg shadow-medium p-8" aria-labelledby="login-heading">
+          <h2 id="login-heading" className="sr-only">Login</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label htmlFor="passcode" className="block text-sm font-medium text-text-primary mb-2">
@@ -63,9 +64,9 @@ function LoginScreen({ onLogin }) {
               Enter Portal →
             </button>
           </form>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
 
