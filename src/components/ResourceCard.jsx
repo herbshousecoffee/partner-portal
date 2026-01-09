@@ -30,8 +30,9 @@ function ResourceCard({ resource }) {
     if (isExternal) {
       window.open(url, '_blank', 'noopener,noreferrer');
     } else {
-      // Trigger download
-      window.location.href = url;
+      // Trigger download with BASE_URL for GitHub Pages compatibility
+      const fullUrl = `${import.meta.env.BASE_URL}${url.startsWith('/') ? url.slice(1) : url}`;
+      window.location.href = fullUrl;
     }
   };
 
