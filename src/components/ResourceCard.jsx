@@ -4,7 +4,9 @@ const fileTypeIcons = {
   zip: '📦',
   png: '🖼️',
   jpg: '🖼️',
-  link: '🔗'
+  link: '🔗',
+  video: '🎬',
+  folder: '📁'
 };
 
 const fileTypeColors = {
@@ -12,10 +14,12 @@ const fileTypeColors = {
   zip: 'text-yellow-600',
   png: 'text-blue-600',
   jpg: 'text-blue-600',
-  link: 'text-gray-600'
+  link: 'text-gray-600',
+  video: 'text-purple-600',
+  folder: 'text-amber-600'
 };
 
-function ResourceCard({ resource }) {
+function ResourceCard({ resource, onNavigate }) {
   const {
     title,
     description,
@@ -23,10 +27,18 @@ function ResourceCard({ resource }) {
     previewImage,
     fileType,
     url,
-    isExternal
+    isExternal,
+    isComingSoon,
+    navigateTo
   } = resource;
 
   const handleClick = () => {
+    if (isComingSoon) return;
+    // Handle internal navigation for folder type
+    if (navigateTo && onNavigate) {
+      onNavigate(navigateTo);
+      return;
+    }
     if (isExternal) {
       window.open(url, '_blank', 'noopener,noreferrer');
     } else {
@@ -46,11 +58,18 @@ function ResourceCard({ resource }) {
   return (
     <div
       onClick={handleClick}
-      className="bg-surface border border-border rounded-md overflow-hidden cursor-pointer card-hover"
+      className={`bg-surface border border-border rounded-md overflow-hidden ${
+        isComingSoon ? 'opacity-60 cursor-not-allowed' : 'cursor-pointer card-hover'
+      }`}
     >
       {/* Preview Image */}
-      <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">
+      <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center relative">
         <span className="text-6xl">{fileTypeIcons[fileType] || '📁'}</span>
+        {isComingSoon && (
+          <div className="absolute top-2 right-2 bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded">
+            Coming Soon
+          </div>
+        )}
       </div>
 
       {/* Card Content */}
@@ -60,7 +79,7 @@ function ResourceCard({ resource }) {
           <span className={`text-xs font-medium uppercase ${fileTypeColors[fileType] || 'text-gray-600'}`}>
             {fileType}
           </span>
-          {isExternal && (
+          {isExternal && !isComingSoon && (
             <span className="text-gray-400 text-sm">↗</span>
           )}
         </div>

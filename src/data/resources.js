@@ -1,39 +1,6 @@
 export const resources = [
   // Marketing Resources
   {
-    id: "mkt-001",
-    section: "marketing",
-    title: "Brand Asset Kit",
-    description: "Complete logo package with usage guidelines and color specs.",
-    dateUpdated: "2026-01-02",
-    previewImage: "/assets/previews/brand-kit.png",
-    fileType: "zip",
-    url: "/assets/downloads/brand-asset-kit.zip",
-    isExternal: false
-  },
-  {
-    id: "mkt-002",
-    section: "marketing",
-    title: "Co-Branded Templates",
-    description: "Editable marketing templates for partner promotions.",
-    dateUpdated: "2025-12-15",
-    previewImage: "/assets/previews/templates.png",
-    fileType: "zip",
-    url: "/assets/downloads/cobranded-templates.zip",
-    isExternal: false
-  },
-  {
-    id: "mkt-003",
-    section: "marketing",
-    title: "Social Media Kit",
-    description: "Instagram and Facebook ready graphics and templates.",
-    dateUpdated: "2025-12-20",
-    previewImage: "/assets/previews/social-kit.png",
-    fileType: "zip",
-    url: "/assets/downloads/social-media-kit.zip",
-    isExternal: false
-  },
-  {
     id: "mkt-004",
     section: "marketing",
     title: "Brewing Guide",
@@ -42,17 +9,6 @@ export const resources = [
     previewImage: "/assets/previews/brewing-guide.png",
     fileType: "pdf",
     url: "/assets/downloads/brewing-guide.pdf",
-    isExternal: false
-  },
-  {
-    id: "mkt-005",
-    section: "marketing",
-    title: "Grower Series Calendar",
-    description: "2026 release schedule for Grower Series coffees.",
-    dateUpdated: "2026-01-01",
-    previewImage: "/assets/previews/grower-calendar.png",
-    fileType: "pdf",
-    url: "/assets/downloads/grower-series-2026.pdf",
     isExternal: false
   },
   {
@@ -66,51 +22,64 @@ export const resources = [
     url: "/assets/downloads/coffee-release-overview.pdf",
     isExternal: false
   },
+  {
+    id: "mkt-005",
+    section: "marketing",
+    title: "Grower Series Calendar",
+    description: "2026 release schedule for Grower Series coffees.",
+    dateUpdated: "2026-01-01",
+    previewImage: "/assets/previews/grower-calendar.png",
+    fileType: "pdf",
+    url: "/assets/downloads/grower-series-calendar.pdf",
+    isExternal: false
+  },
+  {
+    id: "mkt-007",
+    section: "marketing",
+    title: "Co-Branded Design Assets",
+    description: "Logo and packaging assets for partner use.",
+    dateUpdated: "2026-01-17",
+    previewImage: "/assets/previews/cobranded-assets.png",
+    fileType: "folder",
+    url: "#",
+    isExternal: false,
+    navigateTo: "cobranded-assets"
+  },
+  {
+    id: "mkt-011",
+    section: "marketing",
+    title: "Social Content Resources",
+    description: "Social media content and templates for partner promotions.",
+    dateUpdated: "2026-01-17",
+    previewImage: "/assets/previews/social-content.png",
+    fileType: "link",
+    url: "#",
+    isExternal: true
+  },
 
   // Sales Resources
   {
-    id: "sales-001",
+    id: "sales-005",
     section: "sales",
-    title: "Product Info Sheets",
-    description: "Individual coffee product specifications and details.",
-    dateUpdated: "2025-12-28",
-    previewImage: "/assets/previews/product-info.png",
+    title: "Huila Colombia Sell Sheet",
+    description: "One-pager sales tool for Huila Colombia coffee.",
+    dateUpdated: "2026-01-17",
+    previewImage: "/assets/previews/huila-sellsheet.png",
     fileType: "pdf",
-    url: "/assets/downloads/product-info-sheets.pdf",
+    url: "/assets/downloads/huila-colombia-sell-sheet.pdf",
     isExternal: false
   },
   {
-    id: "sales-002",
+    id: "sales-006",
     section: "sales",
-    title: "Wholesale Pricing Guide",
-    description: "Current wholesale pricing tiers and volume discounts.",
-    dateUpdated: "2026-01-01",
-    previewImage: "/assets/previews/pricing.png",
-    fileType: "pdf",
-    url: "/assets/downloads/wholesale-pricing-2026.pdf",
-    isExternal: false
-  },
-  {
-    id: "sales-003",
-    section: "sales",
-    title: "Sell Sheet - House Blend",
-    description: "One-pager sales tool for House Blend conversations.",
-    dateUpdated: "2025-11-20",
-    previewImage: "/assets/previews/house-blend.png",
-    fileType: "pdf",
-    url: "/assets/downloads/sellsheet-house-blend.pdf",
-    isExternal: false
-  },
-  {
-    id: "sales-004",
-    section: "sales",
-    title: "Sell Sheet - Signature",
-    description: "One-pager sales tool for Signature Blend.",
-    dateUpdated: "2025-11-20",
-    previewImage: "/assets/previews/signature.png",
-    fileType: "pdf",
-    url: "/assets/downloads/sellsheet-signature.pdf",
-    isExternal: false
+    title: "Herb's House Introduction",
+    description: "Video introduction to Herb's House Coffee for partners.",
+    dateUpdated: "2026-01-17",
+    previewImage: "/assets/previews/herbs-intro-video.png",
+    fileType: "video",
+    url: "#",
+    isExternal: true,
+    isComingSoon: true
   },
 
   // Project Resources
@@ -122,7 +91,7 @@ export const resources = [
     dateUpdated: "2026-01-02",
     previewImage: "/assets/previews/retail-dashboard.png",
     fileType: "link",
-    url: "https://example.com/retail-dashboard",
+    url: "https://retail-rollout-dashboard.vercel.app",
     isExternal: true
   },
   {
@@ -133,7 +102,7 @@ export const resources = [
     dateUpdated: "2025-12-18",
     previewImage: "/assets/previews/demo-dashboard.png",
     fileType: "link",
-    url: "https://example.com/demo-dashboard",
+    url: "#",
     isExternal: true
   }
 ];
