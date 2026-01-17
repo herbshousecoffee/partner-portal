@@ -2,16 +2,228 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom base styles */
+/* ═══════════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS - Partner Portal Style Guide
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Base radius */
+  --radius: 0.5rem;
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SURFACE LAYERS (Light Mode)
+     ───────────────────────────────────────────────────────────────────────── */
+  --surface-0: oklch(0.97 0.002 260);
+  --surface-1: oklch(1 0 0);
+  --surface-2: oklch(0.99 0.002 260);
+  --surface-3: oklch(0.96 0.003 260);
+  --surface-4: oklch(0.93 0.004 260);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TEXT HIERARCHY (Light Mode)
+     ───────────────────────────────────────────────────────────────────────── */
+  --text-primary: oklch(0.15 0.005 260);
+  --text-secondary: oklch(0.40 0.005 260);
+  --text-tertiary: oklch(0.55 0.005 260);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     BORDERS (Light Mode)
+     ───────────────────────────────────────────────────────────────────────── */
+  --border-subtle: oklch(0 0 0 / 0.04);
+  --border-default: oklch(0 0 0 / 0.08);
+  --border-strong: oklch(0 0 0 / 0.12);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     CATEGORY COLORS (Light Mode)
+     Marketing: Blue, Sales: Green, Projects: Red
+     ───────────────────────────────────────────────────────────────────────── */
+  --category-marketing: oklch(0.55 0.18 250);
+  --category-sales: oklch(0.55 0.18 155);
+  --category-projects: oklch(0.55 0.22 25);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     ACCENT (matches active category or primary action)
+     ───────────────────────────────────────────────────────────────────────── */
+  --accent-primary: oklch(0.55 0.18 250);
+  --accent-primary-hover: oklch(0.50 0.20 250);
+  --accent-primary-muted: oklch(0.55 0.18 250 / 0.10);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     STATUS COLORS (Light Mode)
+     ───────────────────────────────────────────────────────────────────────── */
+  --status-active: oklch(0.55 0.20 200);
+  --status-completed: oklch(0.55 0.18 155);
+  --status-overdue: oklch(0.55 0.22 25);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SHADOWS (Light Mode)
+     ───────────────────────────────────────────────────────────────────────── */
+  --shadow-sm: 0 2px 4px oklch(0 0 0 / 0.05), 0 1px 2px oklch(0 0 0 / 0.03);
+  --shadow-md: 0 4px 8px oklch(0 0 0 / 0.08), 0 2px 4px oklch(0 0 0 / 0.04);
+  --shadow-lg: 0 8px 24px oklch(0 0 0 / 0.1), 0 4px 8px oklch(0 0 0 / 0.05);
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK THEME (DEFAULT)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dark {
+  /* ─────────────────────────────────────────────────────────────────────────
+     SURFACE LAYERS - Subtle gradation for depth
+     ───────────────────────────────────────────────────────────────────────── */
+  --surface-0: oklch(0.13 0.005 260);
+  --surface-1: oklch(0.16 0.005 260);
+  --surface-2: oklch(0.19 0.005 260);
+  --surface-3: oklch(0.22 0.005 260);
+  --surface-4: oklch(0.26 0.005 260);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     TEXT HIERARCHY
+     ───────────────────────────────────────────────────────────────────────── */
+  --text-primary: oklch(0.95 0 0);
+  --text-secondary: oklch(0.70 0 0);
+  --text-tertiary: oklch(0.50 0 0);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     BORDERS
+     ───────────────────────────────────────────────────────────────────────── */
+  --border-subtle: oklch(1 0 0 / 0.06);
+  --border-default: oklch(1 0 0 / 0.10);
+  --border-strong: oklch(1 0 0 / 0.15);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     CATEGORY COLORS (Dark Mode - brighter for visibility)
+     ───────────────────────────────────────────────────────────────────────── */
+  --category-marketing: oklch(0.65 0.16 250);
+  --category-sales: oklch(0.70 0.15 145);
+  --category-projects: oklch(0.68 0.18 25);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     ACCENT
+     ───────────────────────────────────────────────────────────────────────── */
+  --accent-primary: oklch(0.65 0.15 250);
+  --accent-primary-hover: oklch(0.70 0.17 250);
+  --accent-primary-muted: oklch(0.65 0.15 250 / 0.15);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     STATUS COLORS
+     ───────────────────────────────────────────────────────────────────────── */
+  --status-active: oklch(0.72 0.18 200);
+  --status-completed: oklch(0.72 0.16 155);
+  --status-overdue: oklch(0.65 0.20 25);
+
+  /* ─────────────────────────────────────────────────────────────────────────
+     SHADOWS (Dark Mode)
+     ───────────────────────────────────────────────────────────────────────── */
+  --shadow-sm: 0 2px 4px oklch(0 0 0 / 0.15), 0 1px 2px oklch(0 0 0 / 0.1);
+  --shadow-md: 0 4px 8px oklch(0 0 0 / 0.2), 0 2px 4px oklch(0 0 0 / 0.1);
+  --shadow-lg: 0 8px 24px oklch(0 0 0 / 0.25), 0 4px 8px oklch(0 0 0 / 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @layer base {
+  * {
+    @apply border-default;
+  }
+
   body {
-    @apply bg-background text-text-primary font-sans;
+    @apply bg-surface-0 text-primary font-sans antialiased;
+  }
+
+  /* Custom scrollbar for dark mode */
+  .dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: var(--surface-4);
+    border-radius: 9999px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary);
   }
 }
 
-/* Custom component classes if needed */
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENT CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @layer components {
+  /* Card hover effect */
   .card-hover {
-    @apply transition-all duration-200 hover:shadow-medium hover:scale-[1.02];
+    @apply transition-all duration-200 hover:shadow-theme-md hover:border-strong;
   }
+
+  /* Card accent stripe (left border indicator) */
+  .accent-stripe {
+    @apply absolute left-0 top-0 bottom-0 w-1 rounded-r-sm;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface-0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Category color utilities */
+  .bg-category-marketing { background-color: var(--category-marketing); }
+  .bg-category-sales { background-color: var(--category-sales); }
+  .bg-category-projects { background-color: var(--category-projects); }
+
+  .text-category-marketing { color: var(--category-marketing); }
+  .text-category-sales { color: var(--category-sales); }
+  .text-category-projects { color: var(--category-projects); }
+
+  .border-category-marketing { border-color: var(--category-marketing); }
+  .border-category-sales { border-color: var(--category-sales); }
+  .border-category-projects { border-color: var(--category-projects); }
+
+  /* Surface utilities */
+  .bg-surface-0 { background-color: var(--surface-0); }
+  .bg-surface-1 { background-color: var(--surface-1); }
+  .bg-surface-2 { background-color: var(--surface-2); }
+  .bg-surface-3 { background-color: var(--surface-3); }
+  .bg-surface-4 { background-color: var(--surface-4); }
+
+  /* Text utilities */
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-tertiary { color: var(--text-tertiary); }
+
+  /* Border utilities */
+  .border-subtle { border-color: var(--border-subtle); }
+  .border-default { border-color: var(--border-default); }
+  .border-strong { border-color: var(--border-strong); }
+
+  /* Shadow utilities */
+  .shadow-theme-sm { box-shadow: var(--shadow-sm); }
+  .shadow-theme-md { box-shadow: var(--shadow-md); }
+  .shadow-theme-lg { box-shadow: var(--shadow-lg); }
+
+  /* Status color utilities */
+  .bg-status-active { background-color: var(--status-active); }
+  .bg-status-completed { background-color: var(--status-completed); }
+  .bg-status-overdue { background-color: var(--status-overdue); }
+
+  .text-status-active { color: var(--status-active); }
+  .text-status-completed { color: var(--status-completed); }
+  .text-status-overdue { color: var(--status-overdue); }
 }

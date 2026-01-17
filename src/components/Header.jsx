@@ -1,27 +1,31 @@
+import { ThemeToggle } from './ThemeToggle';
+
 function Header({ onLogout }) {
   return (
-    <header className="h-14 sm:h-16 bg-surface border-b border-border sticky top-0 z-50">
-      <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
-        {/* Logo/Brand - Mobile First */}
+    <header className="bg-surface-0 p-6 sm:p-8">
+      <div className="max-w-full mx-auto flex items-center justify-between">
+        {/* Logo/Brand */}
         <div className="flex items-center gap-3">
           <img
-            src={`${import.meta.env.BASE_URL}assets/hh-logo500.png`}
-            alt="Herb's House Coffee"
-            className="h-8 sm:h-10"
+            src={`${import.meta.env.BASE_URL}assets/HH-ID.svg`}
+            alt="Herb's House"
+            className="h-8 w-8"
           />
-          <span className="hidden sm:inline text-text-secondary">|</span>
-          <span className="hidden sm:inline text-sm text-text-secondary">
-            Partner Portal
-          </span>
+          <h1 className="text-xl font-semibold text-primary">
+            Partner
+          </h1>
         </div>
 
-        {/* Logout Button - Minimum 44px touch target */}
-        <button
-          onClick={onLogout}
-          className="text-sm text-text-secondary hover:text-text-primary transition-colors px-4 py-3 rounded hover:bg-background min-h-[44px]"
-        >
-          Logout
-        </button>
+        {/* Right side actions */}
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            onClick={onLogout}
+            className="text-sm text-secondary hover:text-primary transition-colors px-3 py-2 rounded-md hover:bg-surface-2"
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </header>
   );

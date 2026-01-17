@@ -57,7 +57,7 @@ function CoBrandedAssets({ onBack }) {
       {/* Back Navigation */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-text-secondary hover:text-text-primary mb-6 transition-colors"
+        className="flex items-center gap-2 text-secondary hover:text-primary mb-6 transition-colors"
       >
         <span>←</span>
         <span>Back to Marketing</span>
@@ -65,8 +65,8 @@ function CoBrandedAssets({ onBack }) {
 
       {/* Page Title */}
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold text-text-primary">Co-Branded Design Assets</h1>
-        <p className="text-text-secondary mt-1">Logo and packaging assets for partner use.</p>
+        <h1 className="text-section-title text-primary">Co-Branded Design Assets</h1>
+        <p className="text-secondary mt-1">Logo and packaging assets for partner use.</p>
       </div>
 
       {/* Asset Grid */}

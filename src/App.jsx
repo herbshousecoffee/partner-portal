@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { ThemeProvider } from './context/ThemeContext'
 import LoginScreen from './components/LoginScreen'
 import Portal from './components/Portal'
 import { checkAuth, login, logout } from './utils/auth'
@@ -24,11 +25,15 @@ function App() {
     setIsAuthenticated(false)
   }
 
-  if (!isAuthenticated) {
-    return <LoginScreen onLogin={handleLogin} />
-  }
-
-  return <Portal onLogout={handleLogout} />
+  return (
+    <ThemeProvider defaultTheme="dark">
+      {!isAuthenticated ? (
+        <LoginScreen onLogin={handleLogin} />
+      ) : (
+        <Portal onLogout={handleLogout} />
+      )}
+    </ThemeProvider>
+  )
 }
 
 export default App
