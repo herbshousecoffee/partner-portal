@@ -24,7 +24,7 @@ const getCategoryAccentClass = (section) => {
   }
 };
 
-function ResourceCard({ resource, onNavigate }) {
+function ResourceCard({ resource, onNavigate, onViewFile }) {
   const {
     title,
     description,
@@ -42,6 +42,11 @@ function ResourceCard({ resource, onNavigate }) {
     // Handle internal navigation for folder type
     if (navigateTo && onNavigate) {
       onNavigate(navigateTo);
+      return;
+    }
+    // Open PDFs in modal viewer
+    if (fileType === 'pdf' && !isExternal && onViewFile) {
+      onViewFile(resource);
       return;
     }
     if (isExternal) {

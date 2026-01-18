@@ -51,7 +51,7 @@ const coBrandedAssets = [
   }
 ];
 
-function CoBrandedAssets({ onBack }) {
+function CoBrandedAssets({ onBack, onViewFile }) {
   return (
     <div>
       {/* Back Navigation */}
@@ -72,7 +72,7 @@ function CoBrandedAssets({ onBack }) {
       {/* Asset Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {coBrandedAssets.map(asset => (
-          <ResourceCard key={asset.id} resource={asset} />
+          <ResourceCard key={asset.id} resource={asset} onViewFile={onViewFile} />
         ))}
       </div>
     </div>

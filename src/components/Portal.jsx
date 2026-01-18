@@ -3,11 +3,13 @@ import Header from './Header';
 import SectionNav from './SectionNav';
 import ResourceGrid from './ResourceGrid';
 import CoBrandedAssets from './CoBrandedAssets';
+import FileViewerModal from './FileViewerModal';
 import { resources } from '../data/resources';
 
 function Portal({ onLogout }) {
   const [activeSection, setActiveSection] = useState('marketing');
   const [subpage, setSubpage] = useState(null);
+  const [viewingFile, setViewingFile] = useState(null);
 
   // Sync with URL hash on mount
   useEffect(() => {
@@ -40,6 +42,16 @@ function Portal({ onLogout }) {
     window.location.hash = activeSection;
   };
 
+  // Open file in viewer modal
+  const handleViewFile = (file) => {
+    setViewingFile(file);
+  };
+
+  // Close file viewer modal
+  const handleCloseViewer = () => {
+    setViewingFile(null);
+  };
+
   const filteredResources = resources.filter(
     resource => resource.section === activeSection
   );
@@ -50,7 +62,7 @@ function Portal({ onLogout }) {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {subpage === 'cobranded-assets' ? (
-          <CoBrandedAssets onBack={handleSubpageBack} />
+          <CoBrandedAssets onBack={handleSubpageBack} onViewFile={handleViewFile} />
         ) : (
           <>
             <SectionNav
@@ -61,10 +73,15 @@ function Portal({ onLogout }) {
             <ResourceGrid
               resources={filteredResources}
               onNavigate={handleSubpageNavigate}
+              onViewFile={handleViewFile}
             />
           </>
         )}
       </main>
+
+      {viewingFile && (
+        <FileViewerModal file={viewingFile} onClose={handleCloseViewer} />
+      )}
     </div>
   );
 }
